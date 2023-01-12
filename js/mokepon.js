@@ -1,9 +1,15 @@
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
-    let botonMascotaEnemigo = document.getElementById('boton-mascota')
-
     botonMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
-    botonMascotaEnemigo.addEventListener('click',seleccionarMascotaEnemigo)
+
+    let botonFuego = document.getElementById('boton-fuego')
+    botonFuego.addEventListener('click',ataqueFuego)
+
+    let botonAgua = document.getElementById('boton-agua')
+    botonAgua.addEventListener('click',ataqueAgua)
+
+    let botonTierra = document.getElementById('boton-tierra')
+    botonTierra.addEventListener('click',ataqueTierra)
 }
 
 function seleccionarMascotaJugador(){
@@ -30,6 +36,8 @@ function seleccionarMascotaJugador(){
     } else{
         alert('SELECCIONA UNA MASCOTA POR FAVOR')
     }
+
+    seleccionarMascotaEnemigo()
 }
 
 function aleatorio(min,max){
@@ -39,7 +47,7 @@ function aleatorio(min,max){
 function seleccionarMascotaEnemigo(){
     let eleccionEnemigo = aleatorio(1,6)
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
-    
+
     switch(eleccionEnemigo){
         case 1 :
         spanMascotaEnemigo.innerHTML = 'Hipodoge'
@@ -58,11 +66,29 @@ function seleccionarMascotaEnemigo(){
         break
         case 6 : 
         spanMascotaEnemigo.innerHTML='Pydos'
+        break
         default :
         alert("ERROR INESPERADO")
         break
     }
 }
+
+function ataqueFuego(){
+    ataqueJugador='FUEGO'
+    alert(ataqueJugador)
+}
+
+function ataqueAgua(){
+    ataqueJugador='AGUA'
+    alert(ataqueJugador)
+}
+
+function ataqueTierra(){
+    ataqueJugador='TIERRA'
+    alert(ataqueJugador)
+}
+
+let ataqueJugador = 0
 
 
 

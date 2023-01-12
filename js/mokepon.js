@@ -1,6 +1,9 @@
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
+    let botonMascotaEnemigo = document.getElementById('boton-mascota')
+
     botonMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
+    botonMascotaEnemigo.addEventListener('click',seleccionarMascotaEnemigo)
 }
 
 function seleccionarMascotaJugador(){
@@ -14,24 +17,50 @@ function seleccionarMascotaJugador(){
 
     if(imputHipodoge.checked){
         spanMascotaJugador.innerHTML= 'Hipodoge'
-        alert('SELECCIONASTE A HIPODOGE')
     } else if (imputCapipepo.checked){
         spanMascotaJugador.innerHTML= 'Capipepo'
-        alert('SELECCIONASTE A CAPIPEPO')
     } else if(imputRatigueya.checked){
         spanMascotaJugador.innerHTML= 'Raigueya'
-        alert('SELECCIONASTE A RATIGUEYA')
     } else if(imputLangostelvis.checked){
         spanMascotaJugador.innerHTML= 'Langostelvis'
-        alert('SELECCIONASTE LANGOSTELVIS')
     } else if (imputTucapalma.checked){
         spanMascotaJugador.innerHTML= 'Tucapalma'
-        alert('SELEECCIONASTE A TUCAPALMA')
     } else if (imputPydos.checked){
         spanMascotaJugador.innerHTML= 'Pydos'
-        alert('SELECCIONASTE PYDOS')
     } else{
         alert('SELECCIONA UNA MASCOTA POR FAVOR')
+    }
+}
+
+function aleatorio(min,max){
+    return Math.floor(Math.random()*( max - min + 1) + min)
+}
+
+function seleccionarMascotaEnemigo(){
+    let eleccionEnemigo = aleatorio(1,6)
+    let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+    
+    switch(eleccionEnemigo){
+        case 1 :
+        spanMascotaEnemigo.innerHTML = 'Hipodoge'
+        break
+        case 2 :
+        spanMascotaEnemigo.innerHTML = 'Capipepo'
+        break
+        case 3 :
+        spanMascotaEnemigo.innerHTML = 'Ratigueya'
+        break
+        case 4 :
+        spanMascotaEnemigo.innerHTML= 'Langostelvis'
+        break
+        case 5 :
+        spanMascotaEnemigo.innerHTML= 'Tucapalma'
+        break
+        case 6 : 
+        spanMascotaEnemigo.innerHTML='Pydos'
+        default :
+        alert("ERROR INESPERADO")
+        break
     }
 }
 

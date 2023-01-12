@@ -4,12 +4,27 @@ function iniciarJuego(){
 }
 
 function seleccionarMascotaJugador(){
-    if(document.getElementById('hipodoge').checked){
+    let imputHipodoge = document.getElementById('hipodoge')
+    let imputCapipepo = document.getElementById('capipepo')
+    let imputRatigueya= document.getElementById('ratigueya')
+    let imputLangostelvis= document.getElementById('langostelvis')
+    let imputTucapalma= document.getElementById('tucapalma')
+    let imputPydos= document.getElementById('pydos')
+
+    if(imputHipodoge.checked){
         alert("SELECCIONASTE A HIPODOGE")
-    } else if (document.getElementById('capipepo').checked){
+    } else if (imputCapipepo.checked){
         alert("SELECCIONASTE A CAPIPEPO")
-    } else if(document.getElementById('ratigueya').checked){
+    } else if(imputRatigueya.checked){
         alert("SELECCIONASTE A RATIGUEYA")
+    } else if(imputLangostelvis.checked){
+        alert('SELECCIONASTE LANGOSTELVIS')
+    } else if (imputTucapalma.checked){
+        alert('SELEECCIONASTE A TUCAPALMA')
+    } else if (imputPydos.checked){
+        alert('SELECCIONASTE PYDOS')
+    } else{
+        alert('SELECCIONA UNA MASCOTA POR FAVOR')
     }
 }
 

@@ -74,41 +74,49 @@ function seleccionarMascotaEnemigo(){
 }
 
 function ataqueFuego(){
-    ataqueJugador='ATAQUE JUGADOR : FUEGO'
-    alert(ataqueJugador)
-    alert(atqEnemigo())
+    ataqueJugador='FUEGO'
+    atqEnemigo()
+    crearMensaje()
 }
 
 function ataqueAgua(){
-    ataqueJugador='ATAQUE JUGADOR : AGUA'
-    alert(ataqueJugador)
-    alert(atqEnemigo())
+    ataqueJugador='AGUA'
+    atqEnemigo()
+    crearMensaje()
 }
 
 function ataqueTierra(){
-    ataqueJugador='ATAQUE JUGADOR : TIERRA'
-    alert(ataqueJugador)
-    alert(atqEnemigo())
+    ataqueJugador='TIERRA'
+    atqEnemigo()
+    crearMensaje()
 }
 
 function atqEnemigo(){
     let eleeccion = aleatorio(1,3)
-    let ataque = ""
     switch(eleeccion){
         case 1 :
-        ataque = 'ATAQUE ENEMIGO : FUEGO'
+        ataqueEnemigo = 'FUEGO'
         break
         case 2 :
-        ataque = 'ATAQUE ENEMIGO : AGUA'
+        ataqueEnemigo = 'AGUA'
         break
         case 3 :
-        ataque = 'ATAQUE ENEMIGO : TIERRA'
+        ataqueEnemigo = 'TIERRA'
         break
         default :
         alert("ERROR INESPERADO")
         break
     }
-    return ataque
+    return ataqueEnemigo
+}
+
+function crearMensaje(){
+    let sectionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML=' Tu mascota atacó con '+ataqueJugador+'\n La mascota enemiga atacó con '+ ataqueEnemigo+'\n PENDIENTE'
+
+    sectionMensajes.appendChild(parrafo)
 }
 
 let ataqueJugador = 0

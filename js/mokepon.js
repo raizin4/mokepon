@@ -74,21 +74,45 @@ function seleccionarMascotaEnemigo(){
 }
 
 function ataqueFuego(){
-    ataqueJugador='FUEGO'
+    ataqueJugador='ATAQUE JUGADOR : FUEGO'
     alert(ataqueJugador)
+    alert(atqEnemigo())
 }
 
 function ataqueAgua(){
-    ataqueJugador='AGUA'
+    ataqueJugador='ATAQUE JUGADOR : AGUA'
     alert(ataqueJugador)
+    alert(atqEnemigo())
 }
 
 function ataqueTierra(){
-    ataqueJugador='TIERRA'
+    ataqueJugador='ATAQUE JUGADOR : TIERRA'
     alert(ataqueJugador)
+    alert(atqEnemigo())
+}
+
+function atqEnemigo(){
+    let eleeccion = aleatorio(1,3)
+    let ataque = ""
+    switch(eleeccion){
+        case 1 :
+        ataque = 'ATAQUE ENEMIGO : FUEGO'
+        break
+        case 2 :
+        ataque = 'ATAQUE ENEMIGO : AGUA'
+        break
+        case 3 :
+        ataque = 'ATAQUE ENEMIGO : TIERRA'
+        break
+        default :
+        alert("ERROR INESPERADO")
+        break
+    }
+    return ataque
 }
 
 let ataqueJugador = 0
+let ataqueEnemigo = 0
 
 
 

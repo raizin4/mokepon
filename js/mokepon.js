@@ -4,10 +4,8 @@ function iniciarJuego(){
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.addEventListener('click',ataqueFuego)
-
     let botonAgua = document.getElementById('boton-agua')
     botonAgua.addEventListener('click',ataqueAgua)
-
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click',ataqueTierra)
 
@@ -158,10 +156,10 @@ function elegirGanador(){
 
 function revisarVidas (){
     if(vidasEnemigo === 0 ){
-        ganador = true
+
         crearMensajeFinal('FELICITACIONES GANASTE 🎉🎉🎉')
     } else if (vidasJugador === 0){
-        ganador = true
+
         crearMensajeFinal('PERDISTE ☹😔😖')
     }
 }
@@ -173,6 +171,14 @@ function crearMensajeFinal(resultadoFinal){
     parrafo.innerHTML= resultadoFinal
 
     sectionMensajes.appendChild(parrafo)
+
+    let botonFuego = document.getElementById('boton-fuego')
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById('boton-agua')
+    botonAgua.disabled = true
+    let botonTierra = document.getElementById('boton-tierra')
+    botonTierra.disabled = true
+
 }
 
 function reiniciar(){
@@ -185,7 +191,6 @@ let ataqueJugador = ""
 let ataqueEnemigo = ""
 let atqJugador = 0
 let atqEnemigo = 0
-let ganador = false
 let vidasJugador = 3
 let vidasEnemigo = 3
 

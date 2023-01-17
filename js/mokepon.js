@@ -1,7 +1,13 @@
 function iniciarJuego(){
+    let sectionAtaques = document.getElementById('select-ataque')
+    sectionAtaques.style.display = 'none'
+
+    let sectionReiniciar = document.getElementById('section-reiniciar')
+    sectionReiniciar.style.display = 'none'
+
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
-
+    
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.addEventListener('click',ataqueFuego)
     let botonAgua = document.getElementById('boton-agua')
@@ -12,9 +18,15 @@ function iniciarJuego(){
     let btnReiniciar = document.getElementById('boton-reiniciar')
     btnReiniciar.addEventListener('click',reiniciar)
 
+
 }
 
 function seleccionarMascotaJugador(){
+    let sectionAtaques = document.getElementById('select-ataque')
+    sectionAtaques.style.display = 'block'
+    let sectionSeleccionarMascota = document.getElementById('select-mascota')
+    sectionSeleccionarMascota.style.display = 'none'
+
     let imputHipodoge = document.getElementById('hipodoge')
     let imputCapipepo = document.getElementById('capipepo')
     let imputRatigueya= document.getElementById('ratigueya')
@@ -155,6 +167,7 @@ function elegirGanador(){
 
 
 function revisarVidas (){
+
     if(vidasEnemigo === 0 ){
 
         crearMensajeFinal('FELICITACIONES GANASTE 🎉🎉🎉')
@@ -162,6 +175,7 @@ function revisarVidas (){
 
         crearMensajeFinal('PERDISTE ☹😔😖')
     }
+
 }
 
 function crearMensajeFinal(resultadoFinal){
@@ -179,7 +193,10 @@ function crearMensajeFinal(resultadoFinal){
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.disabled = true
 
+    let sectionReiniciar = document.getElementById('section-reiniciar')
+    sectionReiniciar.style.display = 'block'
 }
+
 
 function reiniciar(){
 
